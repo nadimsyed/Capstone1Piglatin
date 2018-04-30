@@ -184,7 +184,7 @@ namespace CapstoneProject1
                                 }
                                 else if (match.Success || matchTwo.Success || matchThree.Success || matchFour.Success || matchFive.Success || matchSeven.Success || matchEight.Success || matchNine.Success || matchTen.Success || matchEleven.Success)
                                 {
-                                    Console.Write(temp + " ");
+                                    Console.Write(temp.ToUpper() + " ");
                                 }
                                 else
                                 {
@@ -509,10 +509,12 @@ namespace CapstoneProject1
 
         public static bool FullCaseTester(string slot)
         {
+            Match matchNine = Regex.Match(slot, @"([a-zA-z]+)(\W+)");
+
             int i;
             for (i = 0; i < slot.Length; i++)
             {
-                if (Char.IsUpper(slot, i) || slot[i] == '\'')
+                if (Char.IsUpper(slot, i) || slot[i] == '\'' || matchNine.Success)
                 {
                     continue;
                 }
