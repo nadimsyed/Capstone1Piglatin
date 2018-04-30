@@ -514,7 +514,11 @@ namespace CapstoneProject1
             int i;
             for (i = 0; i < slot.Length; i++)
             {
-                if (Char.IsUpper(slot, i) || slot[i] == '\'' || matchNine.Success)
+                //if (matchNine.Success)
+                //{
+                //    continue;
+                //}
+                /*else*/ if (Char.IsUpper(slot, i) || slot[i] == '\'' )
                 {
                     continue;
                 }
